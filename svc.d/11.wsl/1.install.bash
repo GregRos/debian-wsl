@@ -1,0 +1,1 @@
+cp -f ./wsl.conf /etc/wsl.conf

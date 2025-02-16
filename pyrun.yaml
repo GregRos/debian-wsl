@@ -1,0 +1,7 @@
+before: ./prerun.bash
+root_only: true
+entrypoints:
+  sys:
+    path: ./sys.d
+  svc:
+    path: ./svc.d
