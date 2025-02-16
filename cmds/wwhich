@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+what="$*"
+cache="$HOME/.cache/wwhich"
+mkdir -p "$cache"
+cd "$cache"
+if [ ! -f "$what" ]; then
+    win_path="$(cmd /c "where $what")"
+    wsl_path="$(wslpath -u "$win_path")"
+    echo "$wsl_path" > "$what"
+fi
+cat "$what"
