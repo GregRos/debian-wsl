@@ -16,4 +16,4 @@ tar -zvxf $release bin/nerdctl
 mv bin/nerdctl /usr/bin/nerdctl
 chmod +x /usr/bin/nerdctl
 
-add-completion nerdctl.fish "nerdctl completion fish"
+add-completion nerdctl "nerdctl completion fish"

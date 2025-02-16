@@ -1,3 +1,3 @@
 apt-get install -y \
-    shellcheck gh
+    shellcheck gh dos2unix
     

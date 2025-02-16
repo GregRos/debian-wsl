@@ -1,10 +1,10 @@
 win32_stubs=(
-    "cmd.exe"
     "clip.exe"
     "ipconfig.exe"
     "mklink.exe"
 )
-WINSTUB_DIR="/home/gr/.winstubs"
+rm -rf /home/gr/.winstubs || true
+WINSTUB_DIR="/opt/winstubs"
 rm -rf "$WINSTUB_DIR" || true
 mkdir -p "$WINSTUB_DIR"
 for winstub in "${win32_stubs[@]}"; do

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+dir="$(dirname "$0")"
+for cmd in "$dir"/*; do
+    chmod +x "$cmd"
+done

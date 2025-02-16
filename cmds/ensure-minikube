@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+USER=Greg
+kubectl config set-credentials minikube \
+    --client-certificate=/mnt/c/Users/$USER/.minikube/profiles/minikube/client.crt \
+    --client-key=/mnt/c/Users/$USER/.minikube/profiles/minikube/client.key --embed-certs
+
+kubectl config set-cluster minikube \
+    --certificate-authority=/mnt/c/Users/$USER/.minikube/ca.crt --embed-certs

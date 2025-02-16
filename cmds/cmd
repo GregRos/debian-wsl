@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+cd /mnt/c/codegr
+cmd.exe "$@" | dos2unix

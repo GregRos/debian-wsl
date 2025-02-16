@@ -17,7 +17,6 @@ bash $BOOTSTRAP_DIR/*.pyenv.bash
 bash $BOOTSTRAP_DIR/*.python3.11.bash
 bash $BOOTSTRAP_DIR/*.pipx.bash
 bash $BOOTSTRAP_DIR/*.pyrun.bash
-echo "Installing pipx and pyrun"
 
 
 

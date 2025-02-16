@@ -9,7 +9,7 @@ rm -f $fish_conf/*.*.fish
 echo "
     set -gx GR_ROOT $GR_ROOT
 " >"$HOME/.config/fish/conf.d/00.base.pd.fish"
-
+echo "" >$fish_func/fish_greeting.fish
 mkdir -p "$fish_conf" "$fish_func"
 for file in conf.d/*.fish
     echo "Installing in $fish_conf | $file"
