@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wslpath -u "$(cmd "/c" "echo $*" | dos2unix)"

@@ -1,5 +1,4 @@
-win_path="$(cmd /c where minikube)"
-lin_path="$(wslpath -u "$win_path")"
+lin_path="$(wwhich minikube)"
 rm -rf /home/gr/.local/bin/minikube || true
 tee /home/gr/.local/bin/minikube <<EOF
     #!/usr/bin/env bash

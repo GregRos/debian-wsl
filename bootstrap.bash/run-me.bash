@@ -12,11 +12,9 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-bash $BOOTSTRAP_DIR/*.pyenv_deps.bash
-bash $BOOTSTRAP_DIR/*.pyenv.bash
-bash $BOOTSTRAP_DIR/*.python3.11.bash
-bash $BOOTSTRAP_DIR/*.pipx.bash
-bash $BOOTSTRAP_DIR/*.pyrun.bash
+for script in $BOOTSTRAP_DIR/*.bash; do
+    bash "$script"
+done
 
 
 

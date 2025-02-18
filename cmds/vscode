@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+VSCODE_NAME="code-insiders"
+vscode_loader="$(wwhich $VSCODE_NAME | grep -v "cmd")"
+"$vscode_loader" "${@}"

@@ -5,3 +5,5 @@ entrypoints:
     path: ./sys.d
   svc:
     path: ./svc.d
+  bootstrap:
+    path: ./bootstrap.bash
