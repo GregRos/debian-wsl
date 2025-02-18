@@ -1,4 +1,8 @@
 {
   "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.diagnosticMode": "workspace"
+  "python.analysis.diagnosticMode": "workspace",
+  "files.associations": {
+    "wsl.conf": "ini",
+    "wireguard-gr": "shellscript"
+  }
 }

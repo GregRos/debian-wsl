@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-
+export PERDIDO_IP=185.107.44.16
 export GR_ROOT="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 for cmd in cmds/*; do
     chmod +x "$cmd"

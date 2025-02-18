@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+echo "Last run: $(date)" > /var/initwsl/last_run
+for x in /etc/initwsl.d/*; do
+    if [ -x "$x" ]; then
+        "$x"
+    fi
+done

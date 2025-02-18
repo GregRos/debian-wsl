@@ -1,5 +1,5 @@
 # shellcheck source=utils.bash/source-me.bash
-source "$PD_UTILS_ALL"
+source "$PD_UTILS_ALL
 set -ex
 export DEBIAN_FRONTEND=noninteractive
 

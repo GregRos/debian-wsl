@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export INITWSL_ROOT="/etc/initwsl.d"
 export GR_ROOT="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 export DEBIAN_FRONTEND=noninteractive
