@@ -7,5 +7,4 @@ if [ ! -f "/usr/local/bin/kubectl" ]; then
     sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 fi
 
-add-completion kubectl "kubectl completion fish"
-kubectl version --client    
+kubectl version --client

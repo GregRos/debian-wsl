@@ -6,15 +6,15 @@
 start() {
     echo "Starting WireGuard..."
     ip link add dev wg0 type wireguard || true
-    ip addr add 10.0.11.1/16 dev wg0 
+    ip addr add 10.0.11.1/16 dev wg0
     wg set wg0 \
         listen-port 51820 private-key \
         "/etc/wireguard/gr.wg.key"
- 
+
     wg set wg0 \
-        peer "$(cat /etc/wireguard/perdido.wg.pub)" \
+        peer "$(cat /etc/wireguard/laniakea.wg.pub)" \
         allowed-ips 10.0.10.1/24 \
-        endpoint perdido.bond:51820
+        endpoint laniakea.boo:51820
     ip link set up dev wg0
     ip addr show wg0
 }
@@ -38,20 +38,20 @@ status() {
 }
 
 case "$1" in
-    start)
-        start
-        ;;
-    stop)
-        stop
-        ;;
-    restart)
-        restart
-        ;;
-    status)
-        status
-        ;;
-    *)
-        echo "Usage: $0 {start|stop|restart|status}"
-        exit 1
-        ;;
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+restart)
+    restart
+    ;;
+status)
+    status
+    ;;
+*)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+    ;;
 esac
