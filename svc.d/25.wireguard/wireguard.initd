@@ -8,7 +8,7 @@ start() {
     ip link add dev wg0 type wireguard || true
     ip addr add 10.0.11.1/16 dev wg0
     wg set wg0 \
-        listen-port 51820 private-key \
+        listen-port 51830 private-key \
         "/etc/wireguard/gr.wg.key"
 
     wg set wg0 \

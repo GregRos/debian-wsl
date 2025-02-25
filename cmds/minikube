@@ -1,3 +1,0 @@
-#!/bin/bash
-minikube_exe="$(wwhich minikube)"
-$minikube_exe "$@"

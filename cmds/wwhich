@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
-set -e
-what="$*"
+first_option="$1"
 cache="$HOME/.cache/wwhich"
+if [ "$first_option" = "-f" ]; then
+    shift
+    rm -f $cache/*
+fi
+
+what="$*"
+
 mkdir -p "$cache"
 cd "$cache"
 if [ ! -f "$what" ]; then
     win_path="$(cmd /c "where $what")"
     wsl_path="$(wslpath -u "$win_path")"
-    echo "$wsl_path" > "$what"
+    echo "$wsl_path" >"$what"
 fi
 cat "$what"

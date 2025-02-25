@@ -2,9 +2,18 @@ win32_stubs=(
     "clip.exe"
     "ipconfig.exe"
     "mklink.exe"
+    "gh"
+    "minikube"
 )
+WINSTUB_DIR="/opt/winstubs"
+rm -rf /home/gr/.winstubs || true
+rm -rf "$WINSTUB_DIR" || true
+mkdir -p "$WINSTUB_DIR"
 
 for winstub in "${win32_stubs[@]}"; do
-    rm -f "$WINSTUB_DIR/$winstub"
-    ln -sf "/mnt/c/Windows/System32/$winstub" "$WINSTUB_DIR/$winstub"
+    win_path="$(wwhich -f "$winstub")"
+    echo "#!/bin/bash
+$win_path \"\$@\"    
+    " >"$WINSTUB_DIR/$winstub"
+    chmod +x "$WINSTUB_DIR/$winstub"
 done

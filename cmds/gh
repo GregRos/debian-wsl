@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-gh_exe="$(wwhich gh)"
-$gh_exe "$@"
