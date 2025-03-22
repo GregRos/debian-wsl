@@ -8,15 +8,15 @@ rm -f $fish_conf/*.*.fish
 
 echo "
     set -gx GR_ROOT $GR_ROOT
-    set -gx initwsl_ROOT $initwsl_ROOT
+    set -gx INITWSL_ROOT $INITWSL_ROOT
 " >"$HOME/.config/fish/conf.d/00.base.pd.fish"
 echo "" >$fish_func/fish_greeting.fish
 mkdir -p "$fish_conf" "$fish_func"
 for file in conf.d/*.fish
     echo "Installing in $fish_conf | $file"
     ln -sf (realpath "$file") "$fish_conf/"
-end
-for file in functions/*.fish
-    echo "Installing in $fish_func | $file"
-    ln -sf (realpath "$file") "$fish_func/"
-end
+    endss
+    for file in functions/*.fish
+        echo "Installing in $fish_func | $file"
+        ln -sf (realpath "$file") "$fish_func/"
+    end
