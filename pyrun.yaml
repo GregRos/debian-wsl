@@ -1,5 +1,6 @@
 before: ./prerun.bash
-root_only: true
+root_only: true 
+
 entrypoints:
   sys:
     path: ./sys.d
