@@ -1,0 +1,8 @@
+[hostname]
+ssh_only=false
+style="bold #00ff00"
+format='[$ssh_symbol$hostname]($style) → '
+
+[username]
+format='[$user]($style) @ '
+style_root='bold #ff0000'
