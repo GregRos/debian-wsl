@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo /root/.local/bin/pyrun -C "$GR_ROOT/pyrun.yaml" "$@"
+/root/.local/bin/pyrun -C "$GR_ROOT/pyrun.yaml" "$@"
