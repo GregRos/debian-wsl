@@ -4,6 +4,7 @@ win32_stubs=(
     "mklink.exe"
     "gh"
     "minikube"
+    "docker-credential-desktop.exe"
 )
 WINSTUB_DIR="/opt/winstubs"
 rm -rf /home/gr/.winstubs || true
