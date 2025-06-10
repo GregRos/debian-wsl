@@ -5,7 +5,7 @@ for user in root gr; do
     file="$user_home/.config/fish/conf.d/10.docker.fish"
     echo '
     set -gx DOCKER_HOST "tcp://localhost:2375"
-    set -gx DOCKER_TLS_VERIFY "0"
+    set -e DOCKER_TLS_VERIFY
 ' | tee -a "$file"
     chown gr:gr "$file"
 done
