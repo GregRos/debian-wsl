@@ -1,4 +1,4 @@
-apt-get install -y docker-ce-cli
+apt-get install -y moby-cli
 add-completion docker "docker completion fish"
 file="/home/gr/.config/fish/conf.d/10.docker.fish"
 echo '
