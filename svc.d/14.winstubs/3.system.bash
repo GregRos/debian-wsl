@@ -2,6 +2,7 @@ win32_stubs=(
     "clip.exe"
     "ipconfig.exe"
     "mklink.exe"
+    "powershell.exe"
     "gh"
     "minikube"
     "docker-credential-desktop.exe"
