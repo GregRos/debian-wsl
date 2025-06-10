@@ -1,0 +1,8 @@
+apt-get install -y docker-ce-cli
+add-completion docker "docker completion fish"
+file="/home/gr/.config/fish/conf.d/10.docker.fish"
+echo '
+    set -gx DOCKER_HOST "tcp://localhost:2375"
+    set -gx DOCKER_TLS_VERIFY "0"
+' | tee -a "$file"
+chown gr:gr "$file"

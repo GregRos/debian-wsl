@@ -1,0 +1,3 @@
+#!/bin/bash
+# detect WSL1
+grep -qi microsoft /proc/version && [[ ! $(uname -r) =~ WSL2 ]]
