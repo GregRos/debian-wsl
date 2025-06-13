@@ -4,9 +4,14 @@ export GR_ROOT="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 export DEBIAN_FRONTEND=noninteractive
 source $GR_ROOT/env.bash
-function add-completion {
-    local file="$1"
+add-completion() {
+    local filename="$1"
     local command="$2"
-    eval "$command" > "/home/gr/.config/fish/completions/$file.fish"
+    local user="${3:-gr}"
+    local user_home
+    user_home="$(eval echo "~$user")"
+    local file="$user_home/.config/fish/completions/$filename.fish"
+    eval "$command" >"$file"
+    chown "$user:$user" "$file"
 }
 set -ex
