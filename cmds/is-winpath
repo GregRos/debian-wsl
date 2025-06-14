@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Script to check if $input is a native Windows location using wslpath
+# Usage: ./check_windows_path.sh <path>
+
+input="$(realpath "$1" 2>/dev/null)"
+if [ -z "$input" ]; then
+    echo "Usage: $0 <path>"
+    exit 1
+fi
+
+# Check if wslpath is available
+if ! command -v wslpath >/dev/null 2>&1; then
+    echo "Error: wslpath command not found"
+    exit 1
+fi
+
+# Try to convert path to Windows format
+windows_path=$(wslpath -w "$input" 2>/dev/null)
+
+# Check if conversion succeeded and result is a native Windows path
+if [ $? -eq 0 ] && [[ "$windows_path" =~ ^[A-Za-z]:[/\\] ]]; then
+    exit 0
+else
+    exit 1
+fi

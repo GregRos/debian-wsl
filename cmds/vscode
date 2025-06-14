@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-VSCODE_NAME="code-insiders"
-vscode_loader="$(wwhich $VSCODE_NAME | grep -v "cmd")"
+vscode_name="code-insiders.cmd"
+if is-winpath .; then
+    echo "Running in Windows path, using code-insiders"
+    vscode_name="vscode.exe"
+fi
+vscode_loader="$(wwhich $vscode_name | grep -v "cmd")"
 "$vscode_loader" "${@}"
