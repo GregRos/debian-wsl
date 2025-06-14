@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 vscode_name="code-insiders.cmd"
 if is-winpath .; then
-    echo "Running in Windows path, using code-insiders"
+    echo "Windows path detected; using windows launcher"
     vscode_name="vscode.exe"
+else
+    echo "Non-Windows path detected; using default launcher"
 fi
 vscode_loader="$(wwhich $vscode_name | grep -v "cmd")"
 "$vscode_loader" "${@}"
