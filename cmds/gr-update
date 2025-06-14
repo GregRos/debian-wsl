@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+gr_dir="$(dirname "$0")/.."
+cd "$gr_dir"
+git reset --hard HEAD
+git pull --rebase
